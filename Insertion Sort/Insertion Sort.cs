@@ -8,7 +8,7 @@ namespace Algorithms.Insertion_Sort
 {
     public static class InsertionSort
     {
-        public static List<int> sort(List<int> list)            // complexity analysis  O(n^2)
+        public static void Sort(List<int> list)            // complexity analysis  O(n^2)
         {
             for (int i = 1; i < list.Count; i++)                //n
             {
@@ -20,8 +20,7 @@ namespace Algorithms.Insertion_Sort
                     j--;                                      //n * n 
                 }
                 list[j + 1] = key;                           //n  
-            }
-            return list;                                     //1 
+            }                                   //1 
         }
     }
 }
