@@ -45,6 +45,16 @@
 		- now u have 2 vertices, pick the least weighted edge of both of them to go forward.
 		- skip the edge that connects  to already visted vertx.
 
+	- Graph traversal:
+		- algorithm to iterate on graph
+		1 - BFS (levels)
+			- pick arbitrary vertx, go to its all connected vertices => this is one level.
+			- mark the vertx as visited
+			- each vertx u approached, take it as a head of a graph, and go to all its connected vertices.
+
+
+
+
 
 		  
 

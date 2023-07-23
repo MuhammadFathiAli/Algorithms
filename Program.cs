@@ -1,6 +1,7 @@
 ﻿using Algorithms.Binary_Search;
 using Algorithms.Insertion_Sort;
 using Algorithms.Merge_Sort;
+using Algorithms.Graphs;
 using System;
 using System.Collections.Generic;
 
@@ -44,19 +45,33 @@ namespace Algorithms
             #endregion
             //Console.WriteLine("--------------------------------------------------");
             #region Graph
-            char[] labels = new char[] { '1', '2', '3', '4', '5', '6' };
-            double[,] graph = new double[,]
-            {   
-                { 0, 6.7, 5.2, 2.8, 5.6, 3.6 },
-                { 6.7, 0, 5.7, 7.3, 5.1, 3.2 },
-                { 5.2, 5.7, 0, 3.4, 8.5, 4.0 },
-                { 2.8, 7.3, 3.4, 0, 8, 4.4 },
-                { 5.6, 5.1, 8.5, 8, 0, 4.6 },
-                { 3.6, 3.2, 4, 4.4, 4.6, 0 }
-            };
-            Graph.Graph.Prim_MST(graph,labels);
+            #region prim's
+            //char[] labels = new char[] { '1', '2', '3', '4', '5', '6' };
+            //double[,] graph = new double[,]
+            //{   
+            //    { 0, 6.7, 5.2, 2.8, 5.6, 3.6 },
+            //    { 6.7, 0, 5.7, 7.3, 5.1, 3.2 },
+            //    { 5.2, 5.7, 0, 3.4, 8.5, 4.0 },
+            //    { 2.8, 7.3, 3.4, 0, 8, 4.4 },
+            //    { 5.6, 5.1, 8.5, 8, 0, 4.6 },
+            //    { 3.6, 3.2, 4, 4.4, 4.6, 0 }
+            //};
+            //StaticGraph.Prim_MST(graph,labels);
+            #endregion
+            #region BFS 
+            Graph g = new Graph(new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I" });
+            g.AddEdges(0, new int[] { 1, 2 });
+            g.AddEdges(1, new int[] { 0, 3, 4 });
+            g.AddEdges(2, new int[] { 0, 3, 5 });
+            g.AddEdges(3, new int[] { 1, 2, 4 });
+            g.AddEdges(4, new int[] { 1, 5 });
+            g.AddEdges(5, new int[] { 2, 3, 4, 7 });
+            g.AddEdges(6, new int[] { 7, 8 });
+            g.AddEdges(7, new int[] { 5, 6, 8 });
+            g.AddEdges(8, new int[] { 6, 7 });
+            g.BFS();
+            #endregion
 
-           
             #endregion
         }
     }
