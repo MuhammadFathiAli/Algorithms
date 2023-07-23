@@ -54,6 +54,26 @@ namespace Algorithms.Graphs
             }
             RestoreVertices();
         }
+        public void DFS()
+        {
+            DFSRecursion(Vertices[0]);
+            RestoreVertices();
+        }
+        private void DFSRecursion(Vertex currentVertex)
+        {
+            Edge[] links = currentVertex.VertexLinks;
+            currentVertex.Visited = true;
+            for (int i = 0; i < links.Length; i++)
+            {
+                if (!links[i].Target.Visited)
+                {
+
+                    Console.WriteLine(currentVertex.Name + " - " +
+                            currentVertex.VertexLinks[i].Target.Name);
+                    DFSRecursion(links[i].Target);
+                }
+            }
+        }
 
         private void RestoreVertices()
         {

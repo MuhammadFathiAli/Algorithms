@@ -70,6 +70,8 @@ namespace Algorithms
             g.AddEdges(7, new int[] { 5, 6, 8 });
             g.AddEdges(8, new int[] { 6, 7 });
             g.BFS();
+            Console.WriteLine("------------------------");
+            g.DFS();
             #endregion
 
             #endregion
