@@ -11,36 +11,52 @@ namespace Algorithms
         static void Main(string[] args)
         {
             #region Insertion Sort
-            List<int> list = new List<int>() { 9, 5, 1, 4, 3 };
-            Console.WriteLine("Before Insertion Sort");
-            Console.WriteLine(String.Join(" ", list));
-            InsertionSort.Sort(list);
-            Console.WriteLine("After Insertion Sort");
-            Console.WriteLine(String.Join(" ", list));
+            //List<int> list = new List<int>() { 9, 5, 1, 4, 3 };
+            //Console.WriteLine("Before Insertion Sort");
+            //Console.WriteLine(String.Join(" ", list));
+            //InsertionSort.Sort(list);
+            //Console.WriteLine("After Insertion Sort");
+            //Console.WriteLine(String.Join(" ", list));
             #endregion
-            Console.WriteLine("--------------------------------------------------");
+            //Console.WriteLine("--------------------------------------------------");
             #region Merge Sort
-            List<int> mergelist = new List<int>() { 9, 5, 1, 4, 3 };
-            Console.WriteLine("Before Merge Sort");
-            Console.WriteLine(String.Join(" ", mergelist));
-            MergeSort.Sort(mergelist);
-            Console.WriteLine("After Merge Sort");
-            Console.WriteLine(String.Join(" ", mergelist));
+            //List<int> mergelist = new List<int>() { 9, 5, 1, 4, 3 };
+            //Console.WriteLine("Before Merge Sort");
+            //Console.WriteLine(String.Join(" ", mergelist));
+            //MergeSort.Sort(mergelist);
+            //Console.WriteLine("After Merge Sort");
+            //Console.WriteLine(String.Join(" ", mergelist));
             #endregion
-            Console.WriteLine("--------------------------------------------------");
+            //Console.WriteLine("--------------------------------------------------");
             #region Binary Search
-            List<int> searchlist = new List<int>() { 1,3,4,5,9,12,17 };
-            Console.WriteLine(BinarySearch.Search(searchlist, 4));
-            Console.WriteLine(BinarySearch.Search(searchlist, 1));
-            Console.WriteLine(BinarySearch.Search(searchlist, 17));
-            Console.WriteLine(BinarySearch.Search(searchlist, 30));
+            //List<int> searchlist = new List<int>() { 1,3,4,5,9,12,17 };
+            //Console.WriteLine(BinarySearch.Search(searchlist, 4));
+            //Console.WriteLine(BinarySearch.Search(searchlist, 1));
+            //Console.WriteLine(BinarySearch.Search(searchlist, 17));
+            //Console.WriteLine(BinarySearch.Search(searchlist, 30));
             #endregion
-            Console.WriteLine("--------------------------------------------------");
+            //Console.WriteLine("--------------------------------------------------");
             #region Segeragation between Positive nd negative numbers 
-            List<int> segList = new List<int>() { 6, -5, 12, 10, -9, -1 };
-            Console.WriteLine(String.Join(" ", segList));
-            MergeExtensions.segeregatePosNegNumbers(segList);
-            Console.WriteLine(String.Join(" ", segList));
+            //List<int> segList = new List<int>() { 6, -5, 12, 10, -9, -1 };
+            //Console.WriteLine(String.Join(" ", segList));
+            //MergeExtensions.segeregatePosNegNumbers(segList);
+            //Console.WriteLine(String.Join(" ", segList));
+            #endregion
+            //Console.WriteLine("--------------------------------------------------");
+            #region Graph
+            char[] labels = new char[] { '1', '2', '3', '4', '5', '6' };
+            double[,] graph = new double[,]
+            {   
+                { 0, 6.7, 5.2, 2.8, 5.6, 3.6 },
+                { 6.7, 0, 5.7, 7.3, 5.1, 3.2 },
+                { 5.2, 5.7, 0, 3.4, 8.5, 4.0 },
+                { 2.8, 7.3, 3.4, 0, 8, 4.4 },
+                { 5.6, 5.1, 8.5, 8, 0, 4.6 },
+                { 3.6, 3.2, 4, 4.4, 4.6, 0 }
+            };
+            Graph.Graph.Prim_MST(graph,labels);
+
+           
             #endregion
         }
     }

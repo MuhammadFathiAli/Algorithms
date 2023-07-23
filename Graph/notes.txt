@@ -1,0 +1,50 @@
+﻿-- Graph 
+	- a general form fo connected nodes
+	- heap and binary trees are restricted types of graphs 
+	- there are many types of graphs
+	- main nodes in graph called (vertics Or node Or point)
+	- connectors that connect the nodes called (edges OR links Or lines)
+	- Graph types 
+		- null graph : no edges graph, only vertices.
+		- directed graph : edges have specific directions.
+		- undirected graph : edges are bi-directional.
+		- connected graph : all nodes are connected, when u start from a vertx u can vsisit all vertcies.
+							- each vertx is connected to all graph's vertices indirectly.
+		- disconnected graph : not connected, u can't visit all nodes starting from a node.
+		- complete graph : each vertx is connected to all graph's vertices directly 
+		- pseudo graph : 2 vertices in the graph has 2 edges bbetween them + graph has self loop (edge connects it with itself)
+
+	- apps :
+		- maps
+		- social networks
+		- operating systems
+		- newtworks
+	
+	- Graph representation:
+		- graph is a figure
+		- u should map it to a representation form to store the data in the memoty with its relations.
+		- 2 ways to represent the graphs :
+			-  Adjacency matrix: array of arrays (multi-dimensional array)
+				a matrix represent the relation between vertices (vertex to vertex relationship)
+				Row = From
+				Column = To
+				when row A, col B is 1 => means there's an edge from A to B
+				and if it's a weighted edge => then row A, col B will = weight.
+
+			- Adjacency List: a Array of linkedList
+				each vertex is an array item which is a start of a linked list of vertices it is directly connected to.
+
+
+	- min spanning tree (MST) short connection networks
+		simplifing the graph to contain the min possible edges.
+		(no cycles)
+		Number of edges in min spanning tree = Number of vertices - 1.
+		
+		- pick random vertx
+		- pick the least weighted edge of it.
+		- now u have 2 vertices, pick the least weighted edge of both of them to go forward.
+		- skip the edge that connects  to already visted vertx.
+
+
+		  
+
