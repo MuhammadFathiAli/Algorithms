@@ -59,19 +59,38 @@ namespace Algorithms
             //StaticGraph.Prim_MST(graph,labels);
             #endregion
             #region BFS 
-            Graph g = new Graph(new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I" });
-            g.AddEdges(0, new int[] { 1, 2 });
-            g.AddEdges(1, new int[] { 0, 3, 4 });
-            g.AddEdges(2, new int[] { 0, 3, 5 });
-            g.AddEdges(3, new int[] { 1, 2, 4 });
-            g.AddEdges(4, new int[] { 1, 5 });
-            g.AddEdges(5, new int[] { 2, 3, 4, 7 });
-            g.AddEdges(6, new int[] { 7, 8 });
-            g.AddEdges(7, new int[] { 5, 6, 8 });
-            g.AddEdges(8, new int[] { 6, 7 });
-            g.BFS();
-            Console.WriteLine("------------------------");
-            g.DFS();
+            //Graph g = new Graph(new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I" });
+            //g.AddEdges(0, new int[] { 1, 2 });
+            //g.AddEdges(1, new int[] { 0, 3, 4 });
+            //g.AddEdges(2, new int[] { 0, 3, 5 });
+            //g.AddEdges(3, new int[] { 1, 2, 4 });
+            //g.AddEdges(4, new int[] { 1, 5 });
+            //g.AddEdges(5, new int[] { 2, 3, 4, 7 });
+            //g.AddEdges(6, new int[] { 7, 8 });
+            //g.AddEdges(7, new int[] { 5, 6, 8 });
+            //g.AddEdges(8, new int[] { 6, 7 });
+            //g.BFS();
+            //Console.WriteLine("------------------------");
+            //g.DFS();
+            #endregion
+
+            #region Dijsktra
+            Graph g = new Graph(new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" });
+
+            g.AddEdges(0, new int[] { 1, 2, 3 }, new double[] { 2, 4, 3 });
+
+            g.AddEdges(1, new int[] { 4, 5, 6 }, new double[] { 7, 4, 6 });
+            g.AddEdges(2, new int[] { 4, 5, 6 }, new double[] { 3, 2, 4 });
+            g.AddEdges(3, new int[] { 4, 5, 6 }, new double[] { 4, 1, 5 });
+
+            g.AddEdges(4, new int[] { 7, 8 }, new double[] { 1, 4 });
+            g.AddEdges(5, new int[] { 7, 8 }, new double[] { 6, 3 });
+            g.AddEdges(6, new int[] { 7, 8 }, new double[] { 3, 3 });
+
+            g.AddEdges(7, new int[] { 9 }, new double[] { 3 });
+            g.AddEdges(8, new int[] { 9 }, new double[] { 4 });
+
+            g.Dijkstra();
             #endregion
 
             #endregion

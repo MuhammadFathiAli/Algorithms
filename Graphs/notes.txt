@@ -53,7 +53,12 @@
 			- each vertx u approached, take it as a head of a graph, and go to all its connected vertices.
 
 
+	--------------------------- 
+	- Dijkstra's shortest path 
 
+		- to get the least cost or weight or length of a path in the graph 
+		- consider to reach to any vertx it costs an infinity cost at first, then with each trail compare and choose the less cost.
+		- greedy algorithm here, to pick the good current choice regardless what's next.
 
 
 		  

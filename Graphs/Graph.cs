@@ -30,6 +30,52 @@ namespace Algorithms.Graphs
                         new Edge(Vertices[vertexIndex], Vertices[targetsIndex[i]]);
             }
         }
+        public void AddEdges(int vertexIndex, int[] targetsIndex, double[] weights)
+        {
+            Vertices[vertexIndex].VertexLinks = new Edge[targetsIndex.Length];
+            for (int i = 0; i < targetsIndex.Length; i++)
+            {
+                Vertices[vertexIndex].VertexLinks[i] =
+                        new Edge(Vertices[vertexIndex], Vertices[targetsIndex[i]], weights[i]);
+            }
+        }
+        public void Dijkstra()
+        {
+            Console.WriteLine("Dijkstra from graph class");
+            
+            for (int i = 1; i < Vertices.Length; i++)
+            {
+                Vertices[i].TotalLength = double.MaxValue;
+            }
+            Vertex currentVertex;
+            for (int i = 0; i < Vertices.Length; i++)
+            {
+                currentVertex = Vertices[i];
+                Edge[] destinations = currentVertex.VertexLinks;
+                if (destinations == null) continue;
+                Edge currentEdge;
+                for (int j = 0; j < destinations.Length; j++)
+                {
+                    currentEdge = destinations[j];
+                    double newLength = currentVertex.TotalLength + currentEdge.Weight;
+                    if (newLength < currentEdge.Target.TotalLength)
+                    {
+                        currentEdge.Target.TotalLength = newLength;
+                        currentEdge.Target.SourceOfTotalLength = currentVertex;
+                    }
+                }
+            }
+            string path = Vertices[Vertices.Length - 1].Name;
+            Vertex v = Vertices[Vertices.Length - 1];
+            while (v.SourceOfTotalLength != null)
+            {
+                path = v.SourceOfTotalLength.Name + " - " + path;
+                v = v.SourceOfTotalLength;
+            }
+            Console.WriteLine(Vertices[Vertices.Length - 1].TotalLength);
+            Console.WriteLine(path);
+            RestoreVertices();
+        }
         public void BFS()
         {
             Console.WriteLine("BFS From Graph Class;");
@@ -80,6 +126,8 @@ namespace Algorithms.Graphs
             foreach (Vertex v in this.Vertices)
             {
                 v.Visited = false;
+                v.TotalLength = 0;
+                v.SourceOfTotalLength = null;
             }
         }
 
@@ -87,6 +135,8 @@ namespace Algorithms.Graphs
         {
             public string Name;
             public bool Visited;
+            public double TotalLength;
+            public Vertex SourceOfTotalLength;
             public Edge[] VertexLinks;
         }
         private class Edge
